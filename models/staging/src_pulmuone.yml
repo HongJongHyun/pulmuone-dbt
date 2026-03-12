@@ -1,0 +1,49 @@
+version: 2
+
+sources:
+  - name: pulmuone
+    database: PULMUONE_POC
+    schema: PUBLIC
+    description: 풀무원 원본 데이터 소스
+    tables:
+      - name: customers
+        description: 고객/거래처 정보
+        columns:
+          - name: customer_id
+            description: 고객 고유 ID
+            tests: [unique, not_null]
+      - name: suppliers
+        description: 공급업체 정보
+        columns:
+          - name: supplier_id
+            tests: [unique, not_null]
+      - name: raw_materials
+        description: 원재료 마스터
+        columns:
+          - name: material_id
+            tests: [unique, not_null]
+      - name: products
+        description: 제품 마스터
+        columns:
+          - name: product_id
+            tests: [unique, not_null]
+      - name: production_orders
+        description: 생산 지시/실적
+        columns:
+          - name: production_order_id
+            tests: [unique, not_null]
+      - name: quality_inspections
+        description: 품질 검사 결과
+        columns:
+          - name: inspection_id
+            tests: [unique, not_null]
+      - name: inventory_transactions
+        description: 재고 입출고 내역
+        columns:
+          - name: transaction_id
+            tests: [unique, not_null]
+      - name: sales_orders
+        description: 판매 주문 내역
+        columns:
+          - name: order_id
+            tests: [unique, not_null]
