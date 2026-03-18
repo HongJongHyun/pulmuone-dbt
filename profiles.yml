@@ -4,6 +4,7 @@ default_connection_name:
     prod:
       type: snowflake
       account: sfseapac-kr_demo24
+      user: ADMIN
       database: PULMUONE_POC
       warehouse: PULMUONE_WH
       schema: PUBLIC
